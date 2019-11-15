@@ -1,12 +1,12 @@
 import React from 'react'
 
-const Categories = ({ categories }) => {
+const Categories = ({ categories, getDrinkList }) => {
   return (
     <div className="columns is-vcentered is-multiline">
       {categories.map((drink, i) => {
         return (
           <div className="column is-one-quarter" key={i}>
-            <p >{drink.strCategory}</p>
+            <a id={drink.strCategory} onClick={getDrinkList}>{drink.strCategory}</a>
           </div>
         )
       })}
