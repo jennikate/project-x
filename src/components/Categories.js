@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Categories = ({ categories, getDrinkList }) => {
-  console.log(categories)
   return (
     <div className="columns is-vcentered is-multiline">
       {categories.map((drink, i) => {

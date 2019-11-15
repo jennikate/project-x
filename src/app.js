@@ -9,6 +9,7 @@ import Nav from './components/Nav'
 import Home from './components/Home'
 import Categories from './components/Categories'
 import Drinks from './components/Drinks'
+import Drink from './components/Drink'
 
 //styling
 import 'bulma/css/bulma.css'
@@ -34,11 +35,17 @@ class App extends React.Component {
             idDrink: 'default'
           }
         ]
+      },
+      drinkByName: {
+        drinks: [
+          {
+          }
+        ]
       }
     }
   }
 
-  
+
   setNavChoice(e) {
     e.preventDefault()
     this.setState({
@@ -60,6 +67,17 @@ class App extends React.Component {
       .then(resp => this.setState({ drinksByCategory: resp }))
   }
 
+  getDrink(e) {
+    e.preventDefault()
+    this.setState({
+      drink: e.target.id,
+      mainView: 'Drink'
+    })
+    fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${e.target.id}`)
+      .then(resp => resp.json())
+      .then(resp => this.setState({ drinkByName: resp }))
+  }
+
   switchMain(param) {
     switch (param) {
       case 'Home': return <Home />;
@@ -67,11 +85,15 @@ class App extends React.Component {
         return <Categories
           getDrinkList={(e) => this.getDrinkList(e)}
           categories={this.state.categories.drinks}
-
         />;
       case 'Drinks':
         return <Drinks
+          getDrink={(e) => this.getDrink(e)}
           drinks={this.state.drinksByCategory.drinks}
+        />;
+      case 'Drink':
+        return <Drink
+          drink={this.state.drinkByName.drinks}
         />
     }
   }
