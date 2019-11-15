@@ -38,22 +38,15 @@ class App extends React.Component {
     }
   }
 
-  componentDidMount() {
-    this.fetchCategoryAPI() //actually should happen onclick of categories
-  }
-
-  fetchCategoryAPI() {
-    fetch('https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list')
-      .then(resp => resp.json())
-      .then(resp => this.setState({ categories: resp }))
-  }
-
   
   setNavChoice(e) {
     e.preventDefault()
     this.setState({
       mainView: e.target.id
     })
+    fetch('https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list')
+      .then(resp => resp.json())
+      .then(resp => this.setState({ categories: resp }))
   }
 
   getDrinkList(e) {
@@ -78,7 +71,7 @@ class App extends React.Component {
         />;
       case 'Drinks':
         return <Drinks
-          categories={this.state.drinksByCategory.drinks}
+          drinks={this.state.drinksByCategory.drinks}
         />
     }
   }
