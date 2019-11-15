@@ -1,0 +1,48 @@
+COKTAILS
+
+HOME
+load random : https://www.thecocktaildb.com/api/json/v1/1/random.php
+
+MENU
+> by category : https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list
+> by ingredient : https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list
+> by glass type : https://www.thecocktaildb.com/api/json/v1/1/list.php?g=list
+
+On selection, return related cocktails
+
+Filter by category : https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Ordinary_Drink
+Filter by ingredient : https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin
+Filter by glass : https://www.thecocktaildb.com/api/json/v1/1/filter.php?g=Cocktail_glass
+
+
+
+Search options
+By ingredient name : https://www.thecocktaildb.com/api/json/v1/1/search.php?i=vodka
+By name : https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita
+
+
+=============================================
+<header>
+<div hero>
+  Cocktail database
+  some nice text
+</div>
+<nav>
+find cocktails by
+  <a change content below:> category</a>
+  <a change content below:> category</a>
+  <a change content below:> category</a>
+</nav>
+
+<main>
+  category
+  <a list of categories></a>
+
+<sction drink>
+Drink name
+</section>
+
+</main>
+
+<footer>
+ 
