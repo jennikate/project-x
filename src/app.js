@@ -47,6 +47,7 @@ class App extends React.Component {
   loadResults(e) {
     e.preventDefault()
     console.log('The link was clicked.')
+    console.log(e.target.id)
   }
 
   render() {

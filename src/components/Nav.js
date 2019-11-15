@@ -5,8 +5,8 @@ const Nav = ({ loadResults }) => {
     <div className="tabs is-medium">
       <ul>
         <p>View cocktails... </p>
-        <li className='is-active'><a onClick={loadResults}>by Random</a></li>
-        <li><a>by Category</a></li>
+        <li className='is-active'><a id='home' onClick={loadResults}>by Random</a></li>
+        <li><a id='category' onClick={loadResults}>by Category</a></li>
       </ul>
     </div>
 
