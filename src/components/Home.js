@@ -1,10 +1,13 @@
 import React from 'react'
 
-const Main = ({ text }) => {
+const Home = () => {
   return (
-    <p>{text}</p>
+    <div id='main-home' className='show'>
+      <h2>Random drink!</h2>
+      <p>random drink goes here</p>
+    </div>
 
   )
 }
 
-export default Main
+export default Home

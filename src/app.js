@@ -1,8 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+
+//
 import Hero from './components/Hero'
 import Nav from './components/Nav'
 
+//called through setMain
+import Home from './components/Home'
+import Categories from './components/Categories'
+
+//styling
 import 'bulma/css/bulma.css'
 import './style.scss'
 
@@ -12,6 +19,7 @@ class App extends React.Component {
   constructor() {
     super()
     this.state = {
+      mainView: 'Home',
       categories: {
         drinks: []
       },
@@ -39,30 +47,43 @@ class App extends React.Component {
   }
 
   fetchDrinkByCategoryAPI() {
+    //update with param for which drink category
     fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Ordinary_Drink')
       .then(resp => resp.json())
       .then(resp => this.setState({ drinksByCategory: resp }))
   }
 
-  loadResults(e) {
+  setMain(e) {
     e.preventDefault()
-    console.log('The link was clicked.')
-    console.log(e.target.id)
+    this.setState({ 
+      mainView: e.target.id
+    })
   }
+
+  switchMain(param) {
+    switch (param) {
+      case 'Home': return <Home />;
+      case 'Category':
+        return <Categories
+          categories={this.state.categories.drinks}
+        />;
+    }
+  }
+
+
+  
 
   render() {
     return (
       <div>
         <Hero />
-        <Nav 
-          loadResults={(e) => this.loadResults(e)}
+        <Nav
+          setMain={(e) => this.setMain(e)}
+          mainView={this.state.mainView}
         />
-
-        
-
-
-
-
+        <main>
+          {this.switchMain(this.state.mainView)}
+        </main>
       </div>
     )
   }
@@ -72,3 +93,5 @@ ReactDOM.render(
   <App />,
   document.getElementById('root')
 )
+
+

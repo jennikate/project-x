@@ -1,12 +1,14 @@
 import React from 'react'
 
-const Nav = ({ loadResults }) => {
+const Nav = ({ setMain, mainView }) => {
+  // mainView === this.id ? activeClass = 'is-active' : ''
+
   return (
     <div className="tabs is-medium">
       <ul>
         <p>View cocktails... </p>
-        <li className='is-active'><a id='home' onClick={loadResults}>by Random</a></li>
-        <li><a id='category' onClick={loadResults}>by Category</a></li>
+        <li><a className={mainView === 'Home' ? 'is-active' : ''} id='Home' onClick={setMain}>by Random</a></li>
+        <li><a className={mainView === 'Category' ? 'is-active' : ''} id='Category' onClick={setMain}>by Category</a></li>
       </ul>
     </div>
 
