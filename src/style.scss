@@ -102,6 +102,27 @@ main {
     margin-top: 1em;
     padding-top: 1em;
   }
+  .category {
+    text-align: center;
+    font-size: 1.5em;
+    cursor: pointer;
+    border: 1px solid #FFF;
+    min-height: 100px;
+    background-image: linear-gradient($inverse, #FFF);
+    text-align: center;
+    a, a:hover {
+      color: $text;
+      text-decoration: none;
+    }
+    .icon {
+      font-size: 1em;
+      color: $secondary;
+      margin-right: 20px;
+    }
+  }
+  .category:hover {
+    background-image: linear-gradient($primary, #FFF);
+    }
 }
 
 @keyframes drift {

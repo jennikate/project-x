@@ -18,9 +18,9 @@ import './style.scss'
 //fontawesome icons, put into a library so can be used on any component without having to import again
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faSearch, faCoffee, faFileAlt } from '@fortawesome/free-solid-svg-icons'
+import { faSearch, faCoffee, faBeer, faCocktail, faGlassMartini, faGlassMartiniAlt, faGlassWhiskey, faWineGlass, faWineGlassAlt } from '@fortawesome/free-solid-svg-icons'
 
-library.add(fab, faSearch, faCoffee, faFileAlt)
+library.add(fab, faSearch, faCoffee, faBeer, faCocktail, faGlassMartini, faGlassMartiniAlt, faGlassWhiskey, faWineGlass, faWineGlassAlt)
 
 
 class App extends React.Component {
@@ -138,7 +138,9 @@ class App extends React.Component {
           <Hero />
         </header>
         <main>
-          {this.switchMain(this.state.mainView)}
+          <section className='section'>
+            {this.switchMain(this.state.mainView)}
+          </section>
         </main>
       </div>
     )
