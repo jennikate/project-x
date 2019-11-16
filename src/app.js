@@ -44,6 +44,12 @@ class App extends React.Component {
           {
           }
         ]
+      },
+      drinkByRandom: {
+        drinks: [
+          {
+          }
+        ]
       }
     }
   }
@@ -57,7 +63,7 @@ class App extends React.Component {
   getRandomDrink() {
     fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
       .then(resp => resp.json())
-      .then(resp => this.setState({ drinkByName: resp }))
+      .then(resp => this.setState({ drinkByRandom: resp }))
   }
   //called when user clicks on a drink category, it returns the list of drinks in that category
   getDrinkList(e) {
@@ -72,6 +78,7 @@ class App extends React.Component {
   }
   //called when user clicks on specific drink to return details of it
   getDrink(e) {
+    console.log(e.target.id)
     e.preventDefault()
     this.setState({
       drink: e.target.id,
@@ -93,7 +100,7 @@ class App extends React.Component {
       case 'Home': {
         fetch(`https://www.thecocktaildb.com/api/json/v1/1/${e.target.dataset.url}`)
           .then(resp => resp.json())
-          .then(resp => this.setState({ drinkByName: resp }))
+          .then(resp => this.setState({ drinkByRandom: resp }))
       }; break
       case 'Category': {
         fetch(`https://www.thecocktaildb.com/api/json/v1/1/${e.target.dataset.url}`)
@@ -108,7 +115,7 @@ class App extends React.Component {
   switchMain(param) {
     switch (param) {
       case 'Home': return <Home
-        drink={this.state.drinkByName.drinks[0]} />;
+        drink={this.state.drinkByRandom.drinks[0]} />;
       case 'Category':
         return <Categories
           getDrinkList={(e) => this.getDrinkList(e)}
@@ -121,7 +128,7 @@ class App extends React.Component {
         />;
       case 'Drink':
         return <Drink
-          drink={this.state.drinkByName.drinks}
+          drink={this.state.drinkByName.drinks[0]}
         />
     }
   }

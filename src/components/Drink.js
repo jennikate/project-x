@@ -2,22 +2,18 @@ import React from 'react'
 
 const Drink = ({ drink }) => {
   return (
-    <div className="columns is-vcentered is-multiline flip-card">
-      {drink.map((drink, i) => {
-        return (
-          <div className="column is-one-quarter flip-card-inner" key={i}>
-            <div className='flip-card-front'>
-              <img src={drink.strDrinkThumb} />
-              <p id={drink.idDrink}>{drink.strDrink}</p>
-            </div>
-            <div className='flip-card-back'>
-              <p className='drink-instructions'>{drink.strInstructions}</p>
-              <p className='drink-classifications'>{drink.strCategory}, {drink.strAlcoholic}</p>
-              <p>Find recipe on <a target='_blank' rel='noopener noreferrer' href={`https://lmgtfy.com/?q=${drink.strDrink}`}>this search.</a></p>
-            </div>
-          </div>
-        )
-      })}
+    <div className='columns'>
+      <div className='img-photo column is-one-third'>
+        <img src={drink.strDrinkThumb} className='image' />
+      </div>
+      <div className='column is-two-thirds'>
+        <h2 className='subtitle is-2' id={drink.idDrink}>{drink.strDrink}</h2>
+        <p className='drink-classifications'><em>{drink.strCategory}, {drink.strAlcoholic}</em></p>
+        <div className='recipe'>
+          <p className='drink-instructions'>{drink.strInstructions}</p>
+          <p>Find recipe on <a target='_blank' rel='noopener noreferrer' href={`https://google.com/?q=${drink.strDrink}`}>this search.</a></p>
+        </div>
+      </div>
     </div>
 
   )

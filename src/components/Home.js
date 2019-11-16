@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Home = ({ drink }) => {
-  console.log(drink)
   return (
     <div className='columns'>
       <div className='img-photo column is-one-third'>
