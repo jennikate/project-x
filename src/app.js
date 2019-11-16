@@ -93,9 +93,6 @@ class App extends React.Component {
 
   //FETCH API DATA -- different fetch URLs based on what user clicks
   setNavChoice(e) {
-    console.log(e.target)
-    console.log(e.target.dataset.group)
-    console.log(`https://www.thecocktaildb.com/api/json/v1/1/${e.target.dataset.url}`)
     e.preventDefault()
     this.setState({
       mainView: e.target.dataset.group

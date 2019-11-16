@@ -11,15 +11,30 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+
+  p {
+    color: $inverse;
+    text-align: right;
+    font-size: 1.2rem;
+  }
+  .hero-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .hero-text {
+    margin-bottom: -1.5rem;
+  }
 }
 .hero .navbar {
   background-image: linear-gradient(to right, rgba(0,0,0,0) , rgba(0,0,0,0.9));
 }
-
 .hero.is-medium .hero-body {
-  padding-bottom: 15rem;
+  padding-bottom: 3rem;
   padding-top: 0;
+  background-image: linear-gradient(to right, rgba(0,0,0,0) , rgba(0,0,0,0.9));
 }
+
 
 .navbar-item {
   a {
@@ -64,6 +79,7 @@
   text-shadow: $neon-primary;
   transform: rotate(345deg);
   text-align: left;
+  padding-bottom: 1rem;
 }
 .subtitle {
   margin-top: 30px;

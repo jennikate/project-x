@@ -4,11 +4,16 @@ TO DO
 [x] set main view to drinks for category, including a h2, when a category is clicked
 
 [x] style
-[] make responsive
+[x] add ingredient tab
+[x] add glass tab
 
-[] add ingredient tab
-[] add glass tab
-[] handle search errors
+
+[] handle search errors / nothing returned from JSON (should cover clicked or searched scenarios if I get it right)
+[] mobile nav
+[] h2s
+[] better style on categorisation pages
+[] subtitle saying what the site is
+
 
 
 
