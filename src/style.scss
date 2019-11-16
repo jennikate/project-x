@@ -19,12 +19,22 @@
 }
 
 .navbar-item {
-  .is-active {
-    text-decoration: underline;
-  }
-  .is-inactive {
+  a {
+    color: $inverse;
     text-decoration: none;
   }
+  .is-active {
+    font-style: italic;
+    cursor: none;
+  }
+  .is-inactive {
+    font-style: normal;
+    cursor: pointer;
+  }
+}
+
+.input {
+  border-color: $inverse;
 }
 
 .title {

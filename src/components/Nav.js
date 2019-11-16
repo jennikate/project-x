@@ -27,7 +27,7 @@ const Nav = ({ setNavChoice, mainView }) => {
               </span>
               <span className="navbar-item">
                 <p className="control has-icons-right has-icons-right">
-                  <input className="input" type="search" placeholder="Search cocktails" />
+                  <input className="input is-small" type="search" placeholder="Search cocktails" />
                   <span className="icon is-small is-right">
                     <FontAwesomeIcon icon="search" />
                   </span>
