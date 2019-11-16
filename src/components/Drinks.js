@@ -5,9 +5,12 @@ const Drinks = ({ drinks, getDrink }) => {
     <div className="columns is-vcentered is-multiline">
       {drinks.map((drink, i) => {
         return (
-          <div className="column is-one-quarter" key={i}>
-            <a id={drink.idDrink} onClick={getDrink} >{drink.strDrink}</a>
-            {/* <img src={drink.strDrinkThumb} /> */}
+          <div className="column is-one-quarter img-photo drink-list" key={i}>
+            <a className='columns' id={drink.idDrink} onClick={getDrink}>
+              <img className='column' src={drink.strDrinkThumb} />
+              <span className='column' >{drink.strDrink}</span>
+            </a>
+
           </div>
         )
       })}
@@ -17,5 +20,3 @@ const Drinks = ({ drinks, getDrink }) => {
 }
 
 export default Drinks
-
-
