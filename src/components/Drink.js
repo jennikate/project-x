@@ -24,3 +24,6 @@ const Drink = ({ drink }) => {
 }
 
 export default Drink
+
+// I don't think I need the map here, also the design and layout is the same as home so can I combine them?
+// URL routing will be different
