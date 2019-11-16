@@ -14,7 +14,7 @@ const Drink = ({ drink }) => {
             <div className='flip-card-back'>
               <p className='drink-instructions'>{drink.strInstructions}</p>
               <p className='drink-classifications'>{drink.strCategory}, {drink.strAlcoholic}</p>
-              <p>Find recipe on <a target='_blank' href={`https://lmgtfy.com/?q=${drink.strDrink}`}>this search.</a></p>
+              <p>Find recipe on <a target='_blank' rel='noopener noreferrer' href={`https://lmgtfy.com/?q=${drink.strDrink}`}>this search.</a></p>
             </div>
           </div>
         )

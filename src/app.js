@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-//
+//structure pages
 import Hero from './components/Hero'
 import Nav from './components/Nav'
 
@@ -14,6 +14,13 @@ import Drink from './components/Drink'
 //styling
 import 'bulma/css/bulma.css'
 import './style.scss'
+
+//fontawesome icons, put into a library so can be used on any component without having to import again
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faSearch, faCoffee } from '@fortawesome/free-solid-svg-icons'
+
+library.add(fab, faSearch, faCoffee)
 
 
 class App extends React.Component {
@@ -102,11 +109,13 @@ class App extends React.Component {
 
     return (
       <div>
-        <Hero />
-        <Nav
-          setNavChoice={(e) => this.setNavChoice(e)}
-          mainView={this.state.mainView}
-        />
+        <header className='hero is-large'>
+          <Nav
+            setNavChoice={(e) => this.setNavChoice(e)}
+            mainView={this.state.mainView}
+          />
+          <Hero />
+        </header>
         <main>
           {this.switchMain(this.state.mainView)}
         </main>
