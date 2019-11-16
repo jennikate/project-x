@@ -1,7 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const Nav = ({ setNavChoice, mainView }) => {
+const Nav = ({ setNavChoice, mainView, updateInput, searchCocktails, runSearch }) => {
 
   return (
     <div className="hero-head" >
@@ -9,7 +9,6 @@ const Nav = ({ setNavChoice, mainView }) => {
         <div className="container">
           <div className="navbar-brand">
             <a className="navbar-item">
-              {/* <img src="https://bulma.io/images/bulma-type-white.png" alt="Logo"> */}
             </a>
             <span className="navbar-burger burger" data-target="navbarMenuHeroA">
               <span></span> {/* needs to be empty to display the burger */}
@@ -26,12 +25,13 @@ const Nav = ({ setNavChoice, mainView }) => {
                 <a className={mainView === 'Category' ? 'is-active' : ''} id='Category' data-url='list.php?c=list' onClick={setNavChoice}>by Category</a>
               </span>
               <span className="navbar-item">
-                <p className="control has-icons-right has-icons-right">
-                  <input className="input is-small" type="search" placeholder="Search cocktails" />
+                <form className="control has-icons-right has-icons-right">
+                  <input className="input is-small" type="search" placeholder="Search by ingredient" onChange={updateInput} value={searchCocktails}/>
                   <span className="icon is-small is-right">
                     <FontAwesomeIcon icon="search" />
                   </span>
-                </p>
+                  <button onClick={runSearch}>Search</button>
+                </form>
               </span>
             </div>
           </div>

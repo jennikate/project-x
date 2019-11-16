@@ -31,6 +31,7 @@ class App extends React.Component {
       mainView: 'Home',
       drinkType: '',
       drink: '',
+      searchCocktails: '',
       categories: {
         drinks: []
       },
@@ -50,9 +51,16 @@ class App extends React.Component {
           {
           }
         ]
+      },
+      searchResults: {
+        drinks: [
+          {
+          }
+        ]
       }
     }
   }
+
 
   componentDidMount() {
     //must run here to set the homepage on load, haven't worked out how to pass correct params to setNavChoice from here to make it work
@@ -88,10 +96,26 @@ class App extends React.Component {
       .then(resp => this.setState({ drinkByName: resp }))
   }
 
+  //handle search bar
+  updateInput(e) {
+    this.setState({
+      searchCocktails: e.target.value
+    })
+  }
+  runSearch(e) {
+    e.preventDefault()
+    this.setState({
+      mainView: 'Search'
+    })
+    fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${this.state.searchCocktails}`)
+      .then(resp => resp.json())
+      .then(resp => this.setState({ searchResults: resp }))
+  }
+
 
   //sets the nav class, and fetches the relevant data set -- aim to move all fetch's in here
   setNavChoice(e) {
-    // e.preventDefault()
+    e.preventDefault()
     this.setState({
       mainView: e.target.id
     })
@@ -111,6 +135,7 @@ class App extends React.Component {
   }
 
   //switches out the page info -- aim to replace this with router for URL handling
+  //search and category click both return Drinks page, just with different results
   switchMain(param) {
     switch (param) {
       case 'Home': return <Home
@@ -125,6 +150,11 @@ class App extends React.Component {
           getDrink={(e) => this.getDrink(e)}
           drinks={this.state.drinksByCategory.drinks}
         />;
+      case 'Search':
+        return <Drinks
+          getDrink={(e) => this.getDrink(e)}
+          drinks={this.state.searchResults.drinks}
+        />;
       case 'Drink':
         return <Drink
           drink={this.state.drinkByName.drinks[0]}
@@ -134,11 +164,14 @@ class App extends React.Component {
 
   //render core components of page, main is called from latest view type
   render() {
+    console.log(this.state.searchResults)
     return (
       <div>
         <header className='hero is-medium'>
           <Nav
             setNavChoice={(e) => this.setNavChoice(e)}
+            updateInput={(e) => this.updateInput(e)}
+            runSearch={(e) => this.runSearch(e)}
             mainView={this.state.mainView}
           />
           <Hero />
