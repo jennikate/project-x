@@ -18,9 +18,9 @@ import './style.scss'
 //fontawesome icons, put into a library so can be used on any component without having to import again
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faSearch, faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { faSearch, faCoffee, faFileAlt } from '@fortawesome/free-solid-svg-icons'
 
-library.add(fab, faSearch, faCoffee)
+library.add(fab, faSearch, faCoffee, faFileAlt)
 
 
 class App extends React.Component {
@@ -36,11 +36,7 @@ class App extends React.Component {
       },
       drinksByCategory: {
         drinks: [
-          {
-            strDrink: 'default',
-            strDrinkThumb: 'default',
-            idDrink: 'default'
-          }
+          {}
         ]
       },
       drinkByName: {
@@ -52,17 +48,18 @@ class App extends React.Component {
     }
   }
 
-
-  setNavChoice(e) {
-    e.preventDefault()
-    this.setState({
-      mainView: e.target.id
-    })
-    fetch('https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list')
-      .then(resp => resp.json())
-      .then(resp => this.setState({ categories: resp }))
+  componentDidMount() {
+    //must run here to set the homepage on load, haven't worked out how to pass correct params to setNavChoice from here to make it work
+    this.getRandomDrink()
   }
 
+  //this fetch is only used to call the random at first load, otherwise it's part of setNav
+  getRandomDrink() {
+    fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
+      .then(resp => resp.json())
+      .then(resp => this.setState({ drinkByName: resp }))
+  }
+  //called when user clicks on a drink category, it returns the list of drinks in that category
   getDrinkList(e) {
     e.preventDefault()
     this.setState({
@@ -73,7 +70,7 @@ class App extends React.Component {
       .then(resp => resp.json())
       .then(resp => this.setState({ drinksByCategory: resp }))
   }
-
+  //called when user clicks on specific drink to return details of it
   getDrink(e) {
     e.preventDefault()
     this.setState({
@@ -85,9 +82,33 @@ class App extends React.Component {
       .then(resp => this.setState({ drinkByName: resp }))
   }
 
+
+  //sets the nav class, and fetches the relevant data set -- aim to move all fetch's in here
+  setNavChoice(e) {
+    // e.preventDefault()
+    this.setState({
+      mainView: e.target.id
+    })
+    switch (e.target.id) {
+      case 'Home': {
+        fetch(`https://www.thecocktaildb.com/api/json/v1/1/${e.target.dataset.url}`)
+          .then(resp => resp.json())
+          .then(resp => this.setState({ drinkByName: resp }))
+      }; break
+      case 'Category': {
+        fetch(`https://www.thecocktaildb.com/api/json/v1/1/${e.target.dataset.url}`)
+          .then(resp => resp.json())
+          .then(resp => this.setState({ categories: resp }))
+      }
+    }
+
+  }
+
+  //switches out the page info -- aim to replace this with router for URL handling
   switchMain(param) {
     switch (param) {
-      case 'Home': return <Home />;
+      case 'Home': return <Home
+        drink={this.state.drinkByName.drinks[0]} />;
       case 'Category':
         return <Categories
           getDrinkList={(e) => this.getDrinkList(e)}
@@ -105,8 +126,8 @@ class App extends React.Component {
     }
   }
 
+  //render core components of page, main is called from latest view type
   render() {
-
     return (
       <div>
         <header className='hero is-medium'>

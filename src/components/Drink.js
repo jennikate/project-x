@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Drink = ({ drink }) => {
-  console.log(drink)
   return (
     <div className="columns is-vcentered is-multiline flip-card">
       {drink.map((drink, i) => {

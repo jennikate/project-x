@@ -20,10 +20,10 @@ const Nav = ({ setNavChoice, mainView }) => {
           <div id="navbarMenuHeroA" className="navbar-menu">
             <div className="navbar-end">
               <span className="navbar-item">
-                <a className={mainView === 'Home' ? 'is-active' : ''} id='Home' onClick={setNavChoice}>Random Cocktail</a>
+                <a className={mainView === 'Home' ? 'is-active' : ''} id='Home' data-url='random.php' onClick={setNavChoice}>Random Cocktail</a>
               </span>
               <span className='navbar-item'>
-                <a className={mainView === 'Category' ? 'is-active' : ''} id='Category' onClick={setNavChoice}>by Category</a>
+                <a className={mainView === 'Category' ? 'is-active' : ''} id='Category' data-url='list.php?c=list' onClick={setNavChoice}>by Category</a>
               </span>
               <span className="navbar-item">
                 <p className="control has-icons-right has-icons-right">
