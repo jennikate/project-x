@@ -3,11 +3,12 @@ TO DO
 [x] change is active class when different tab clicked On
 [x] set main view to drinks for category, including a h2, when a category is clicked
 
-[] style
+[x] style
 [] make responsive
 
 [] add ingredient tab
 [] add glass tab
+[] handle search errors
 
 
 

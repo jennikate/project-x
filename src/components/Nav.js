@@ -26,11 +26,13 @@ const Nav = ({ setNavChoice, mainView, updateInput, searchCocktails, runSearch }
               </span>
               <span className="navbar-item">
                 <form className="control has-icons-right has-icons-right">
-                  <input className="input is-small" type="search" placeholder="Search by ingredient" onChange={updateInput} value={searchCocktails}/>
-                  <span className="icon is-small is-right">
-                    <FontAwesomeIcon icon="search" />
-                  </span>
-                  <button onClick={runSearch}>Search</button>
+                  <div className='field is-grouped'>
+                    <input className="input is-small" type="search" placeholder="Search ingredient" onChange={updateInput} value={searchCocktails} />
+                    <span className="icon is-small is-right">
+                      <FontAwesomeIcon icon="search" />
+                    </span>
+                    <button className="button is-small is-outlined is-inverted " onClick={runSearch}>Go</button>
+                  </div>
                 </form>
               </span>
             </div>

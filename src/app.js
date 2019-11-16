@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom'
 //structure pages
 import Hero from './components/Hero'
 import Nav from './components/Nav'
+import Footer from './components/Footer'
 
 //called through setMain
 import Home from './components/Home'
@@ -164,7 +165,6 @@ class App extends React.Component {
 
   //render core components of page, main is called from latest view type
   render() {
-    console.log(this.state.searchResults)
     return (
       <div>
         <header className='hero is-medium'>
@@ -181,6 +181,7 @@ class App extends React.Component {
             {this.switchMain(this.state.mainView)}
           </section>
         </main>
+        <Footer />
       </div>
     )
   }

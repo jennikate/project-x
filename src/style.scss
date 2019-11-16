@@ -7,9 +7,9 @@
 }
 
 .hero {
-  background-image: url('https://cdn.pixabay.com/photo/2016/11/29/15/05/drink-1870139_1280.jpg');
+  background-image: url('./images/bg.jpg');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   background-position: center center;
 }
 
@@ -35,6 +35,17 @@
 
 .input {
   border-color: $inverse;
+}
+.control.has-icons-right .icon.is-right {
+  right: 40px;
+}
+.button {
+  background-color: $inverse;
+  color: $text;
+  font-size: 0.75rem;
+}
+.button:hover {
+  background-color: $primary;
 }
 
 .title {
@@ -136,11 +147,15 @@ main {
   }
 }
 
+.footer {
+  background-color: #fff;
+  border-top: 1px solid $inverse;
+  font-size: 0.5rem;
+  text-align: center;
+  padding: 1.5rem;
+}
+
 @keyframes drift {
   0% { transform: rotate(3deg); }
   100% { transform: rotate(-3deg); }
-}
-@keyframes driftOnce {
-  0% { transform: rotate(3deg); }
-  100% { transform: rotate(0deg); }
 }
