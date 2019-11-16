@@ -11,7 +11,7 @@ const Home = ({ drink }) => {
         <p className='drink-classifications'><em>{drink.strCategory}, {drink.strAlcoholic}</em></p>
         <div className='recipe'>
           <p className='drink-instructions'>{drink.strInstructions}</p>
-          <p>Find recipe on <a target='_blank' rel='noopener noreferrer' href={`https://google.com/?q=${drink.strDrink}`}>this search.</a></p>
+          <p>Find recipe on <a target='_blank' rel='noopener noreferrer' href={`https://google.com/?q=${drink.strDrink} cocktail`}>this search.</a></p>
         </div>
       </div>
     </div>

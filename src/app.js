@@ -78,13 +78,12 @@ class App extends React.Component {
   }
   //called when user clicks on specific drink to return details of it
   getDrink(e) {
-    console.log(e.target.id)
     e.preventDefault()
     this.setState({
-      drink: e.target.id,
+      drink: e.target.dataset.id,
       mainView: 'Drink'
     })
-    fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${e.target.id}`)
+    fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${e.target.dataset.id}`)
       .then(resp => resp.json())
       .then(resp => this.setState({ drinkByName: resp }))
   }
