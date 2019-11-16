@@ -9,6 +9,8 @@ import Footer from './components/Footer'
 //called through setMain
 import Home from './components/Home'
 import Categories from './components/Categories'
+import Ingredients from './components/Ingredients'
+import Glass from './components/Glass'
 import Drinks from './components/Drinks'
 import Drink from './components/Drink'
 
@@ -34,6 +36,12 @@ class App extends React.Component {
       drink: '',
       searchCocktails: '',
       categories: {
+        drinks: []
+      },
+      ingredients: {
+        drinks: []
+      },
+      glass: {
         drinks: []
       },
       drinksByCategory: {
@@ -74,28 +82,6 @@ class App extends React.Component {
       .then(resp => resp.json())
       .then(resp => this.setState({ drinkByRandom: resp }))
   }
-  //called when user clicks on a drink category, it returns the list of drinks in that category
-  getDrinkList(e) {
-    e.preventDefault()
-    this.setState({
-      drinkType: (e.target.id).split(' ').join('_'),
-      mainView: 'Drinks'
-    })
-    fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${(e.target.id).split(' ').join('_')}`)
-      .then(resp => resp.json())
-      .then(resp => this.setState({ drinksByCategory: resp }))
-  }
-  //called when user clicks on specific drink to return details of it
-  getDrink(e) {
-    e.preventDefault()
-    this.setState({
-      drink: e.target.dataset.id,
-      mainView: 'Drink'
-    })
-    fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${e.target.dataset.id}`)
-      .then(resp => resp.json())
-      .then(resp => this.setState({ drinkByName: resp }))
-  }
 
   //handle search bar
   updateInput(e) {
@@ -103,24 +89,18 @@ class App extends React.Component {
       searchCocktails: e.target.value
     })
   }
-  runSearch(e) {
-    e.preventDefault()
-    this.setState({
-      mainView: 'Search'
-    })
-    fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${this.state.searchCocktails}`)
-      .then(resp => resp.json())
-      .then(resp => this.setState({ searchResults: resp }))
-  }
 
 
-  //sets the nav class, and fetches the relevant data set -- aim to move all fetch's in here
+  //FETCH API DATA -- different fetch URLs based on what user clicks
   setNavChoice(e) {
+    console.log(e.target)
+    console.log(e.target.dataset.group)
+    console.log(`https://www.thecocktaildb.com/api/json/v1/1/${e.target.dataset.url}`)
     e.preventDefault()
     this.setState({
-      mainView: e.target.id
+      mainView: e.target.dataset.group
     })
-    switch (e.target.id) {
+    switch (e.target.dataset.group) {
       case 'Home': {
         fetch(`https://www.thecocktaildb.com/api/json/v1/1/${e.target.dataset.url}`)
           .then(resp => resp.json())
@@ -130,9 +110,33 @@ class App extends React.Component {
         fetch(`https://www.thecocktaildb.com/api/json/v1/1/${e.target.dataset.url}`)
           .then(resp => resp.json())
           .then(resp => this.setState({ categories: resp }))
+      }; break
+      case 'Ingredients': {
+        fetch(`https://www.thecocktaildb.com/api/json/v1/1/${e.target.dataset.url}`)
+          .then(resp => resp.json())
+          .then(resp => this.setState({ ingredients: resp }))
+      }; break
+      case 'Glass': {
+        fetch(`https://www.thecocktaildb.com/api/json/v1/1/${e.target.dataset.url}`)
+          .then(resp => resp.json())
+          .then(resp => this.setState({ glass: resp }))
+      }; break
+      case 'Drinks': {
+        fetch(`https://www.thecocktaildb.com/api/json/v1/1/${e.target.dataset.url}${(e.target.id).split(' ').join('_')}`)
+          .then(resp => resp.json())
+          .then(resp => this.setState({ drinksByCategory: resp }))
+      }; break
+      case 'Search': {
+        fetch(`https://www.thecocktaildb.com/api/json/v1/1/${e.target.dataset.url}${this.state.searchCocktails}`)
+          .then(resp => resp.json())
+          .then(resp => this.setState({ searchResults: resp }))
+      }; break
+      case 'Drink': {
+        fetch(`https://www.thecocktaildb.com/api/json/v1/1/${e.target.dataset.url}${e.target.dataset.id}`)
+          .then(resp => resp.json())
+          .then(resp => this.setState({ drinkByName: resp }))
       }
     }
-
   }
 
   //switches out the page info -- aim to replace this with router for URL handling
@@ -143,17 +147,27 @@ class App extends React.Component {
         drink={this.state.drinkByRandom.drinks[0]} />;
       case 'Category':
         return <Categories
-          getDrinkList={(e) => this.getDrinkList(e)}
+          setNavChoice={(e) => this.setNavChoice(e)}
           categories={this.state.categories.drinks}
+        />;
+      case 'Ingredients':
+        return <Ingredients
+          setNavChoice={(e) => this.setNavChoice(e)}
+          ingredients={this.state.ingredients.drinks}
+        />;
+      case 'Glass':
+        return <Glass
+          setNavChoice={(e) => this.setNavChoice(e)}
+          glass={this.state.glass.drinks}
         />;
       case 'Drinks':
         return <Drinks
-          getDrink={(e) => this.getDrink(e)}
+          setNavChoice={(e) => this.setNavChoice(e)}
           drinks={this.state.drinksByCategory.drinks}
         />;
       case 'Search':
         return <Drinks
-          getDrink={(e) => this.getDrink(e)}
+          setNavChoice={(e) => this.setNavChoice(e)}
           drinks={this.state.searchResults.drinks}
         />;
       case 'Drink':
