@@ -26,16 +26,24 @@
     margin-bottom: -1.5rem;
   }
 }
-.hero .navbar {
-  background-image: linear-gradient(to right, rgba(0,0,0,0) , rgba(0,0,0,0.9));
-}
+
 .hero.is-medium .hero-body {
   padding-bottom: 3rem;
   padding-top: 0;
-  background-image: linear-gradient(to right, rgba(0,0,0,0) , rgba(0,0,0,0.9));
+  background-image: linear-gradient(to bottom right, rgba(0,0,0,0) , rgba(0,0,0,0.9));
 }
 
+.navbar {
+  border-top: 1px solid $secondaryDark;
+  background-image: linear-gradient(to right, $inverse, $secondaryDark);
 
+  h2 {
+    font-weight: bold;
+    font-family: 'Arizonia', Helvetica, sans-serif;
+    font-size: 2rem;
+    text-shadow: $neon-special;
+  }
+}
 .navbar-item {
   a {
     color: $inverse;
@@ -94,7 +102,7 @@ a:hover {
 }
 
 main {
-  .img-photo {
+  .img-photo, .category {
     position: relative;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
     padding: 20px;
@@ -111,7 +119,7 @@ main {
     border-style: inset;
   }
   
-  .img-photo::after {
+  .img-photo::after, .category::after {
     content: '';
     position: absolute;  
     width: 20px; height: 20px;  
@@ -122,7 +130,7 @@ main {
     border-right: none;
     transform: rotate(45deg);
   }
-  .img-photo::before{
+  .img-photo::before, .category::before {
     content: '';
     position: absolute;
     width: 7px; 
@@ -139,17 +147,12 @@ main {
     padding-top: 1em;
   }
   .category {
-    text-align: center;
-    font-size: 1.5em;
-    cursor: pointer;
-    border: 1px solid #FFF;
-    min-height: 100px;
-    background-image: linear-gradient($inverse, #FFF);
-    text-align: center;
-    a, a:hover {
-      color: $text;
-      text-decoration: none;
-    }
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 1.5rem;
+    background-color:black;
+    background-image: $star-pattern;
+    background-size: $star-size;
+    background-position: $star-position;
     .icon {
       font-size: 1em;
       color: $secondary;
@@ -157,10 +160,13 @@ main {
     }
   }
   .category:hover {
-    background-image: linear-gradient($primary, #FFF);
+    text-shadow: $neon-primary;
+    a {
+      text-decoration: none;
+    }
   }
   
-  .drink-list {
+  .drink-list, .category {
     animation: none;
     a {
       color: $inverse;

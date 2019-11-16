@@ -179,14 +179,16 @@ class App extends React.Component {
     return (
       <div>
         <header className='hero is-medium'>
-          <Nav
+          
+          <Hero />
+        </header>
+
+        <Nav
             setNavChoice={(e) => this.setNavChoice(e)}
             updateInput={(e) => this.updateInput(e)}
             runSearch={(e) => this.runSearch(e)}
             mainView={this.state.mainView}
           />
-          <Hero />
-        </header>
         <main>
           <section className='section'>
             {this.switchMain(this.state.mainView)}

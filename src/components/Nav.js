@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 const Nav = ({ setNavChoice, mainView, updateInput, searchCocktails }) => {
 
   return (
-    <div className="hero-head" >
+    <div>
       <nav className="navbar">
         <div className="container">
           <div className="navbar-brand">
@@ -17,6 +17,11 @@ const Nav = ({ setNavChoice, mainView, updateInput, searchCocktails }) => {
             </span>
           </div>
           <div id="navbarMenuHeroA" className="navbar-menu">
+            <div className='navbar-start'>
+              <span className='navbar-item'>
+                <h2>Viewing {mainView}</h2>
+              </span>
+            </div>
             <div className="navbar-end">
               <span className="navbar-item">
                 <a className={mainView === 'Home' ? '' : ''}  data-group='Home' data-url='random.php' onClick={setNavChoice}>Random Cocktail</a>
