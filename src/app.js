@@ -109,7 +109,7 @@ class App extends React.Component {
 
     return (
       <div>
-        <header className='hero is-large'>
+        <header className='hero is-medium'>
           <Nav
             setNavChoice={(e) => this.setNavChoice(e)}
             mainView={this.state.mainView}

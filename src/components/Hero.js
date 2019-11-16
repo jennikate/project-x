@@ -4,8 +4,7 @@ const Hero = () => {
   return (
     <div className="hero-body">
       <div className="container has-text-centered">
-        <h1 className="title">Cocktail Database</h1>
-        <h2 className="subtitle">Discover a new favourite drink!</h2>
+        <h1 className="title">Cocktails</h1>
       </div>
     </div>
 
