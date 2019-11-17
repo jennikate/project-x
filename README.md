@@ -102,7 +102,7 @@ In this app the Nav does the heavy lifting of calling all the needed functions a
 
 <img src="https://github.com/jennikate/project-x/blob/github-pages/src/images/for-readme/Screenshot-1.png?raw=true" border="1" width=45%> <img src="https://github.com/jennikate/project-x/blob/github-pages/src/images/for-readme/Screenshot-2.png?raw=true" border="1" width=45%>
 <img src="https://github.com/jennikate/project-x/blob/github-pages/src/images/for-readme/Screenshot-3.png?raw=true" border="1" width=45%> <img src="https://github.com/jennikate/project-x/blob/github-pages/src/images/for-readme/Screenshot-4.png?raw=true" border="1" width=45%>
-<img src="https://github.com/jennikate/project-x/blob/github-pages/src/images/for-readme/Screenshot-m1.png?raw=true" border="1" width=33%> <img src="https://github.com/jennikate/project-x/blob/github-pages/src/images/for-readme/Screenshot-m2.png?raw=true" border="1" width=33%> <img src="https://github.com/jennikate/project-x/blob/github-pages/src/images/for-readme/Screenshot-m3.png?raw=true" border="1" width=33%>
+<img src="https://github.com/jennikate/project-x/blob/github-pages/src/images/for-readme/Screenshot-m1.png?raw=true" border="1" width=30%> <img src="https://github.com/jennikate/project-x/blob/github-pages/src/images/for-readme/Screenshot-m2.png?raw=true" border="1" width=30%> <img src="https://github.com/jennikate/project-x/blob/github-pages/src/images/for-readme/Screenshot-m3.png?raw=true" border="1" width=30%>
 
 
 ### Bugs
