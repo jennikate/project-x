@@ -9,6 +9,8 @@
 .hero {
   .hero-container {
     background-image: url('./images/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   p {
     color: $inverse;
