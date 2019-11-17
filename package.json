@@ -6,10 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "webpack-dev-server --mode=development",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "webpack -p",
+    "deploy": "yarn build && gh-pages -d dist" 
   },
   "homepage": "https://jennikate.github.io/project-x",
   "author": "JenniKate Wallace",
@@ -41,7 +39,6 @@
     "react-dom": "^16.7.0",
     "react-lazy-hero": "^2.0.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "^3.2.0",
     "styled-components": "^4.4.1"
   }
 }
