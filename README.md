@@ -52,11 +52,11 @@ The above met the brief. The next tasks on the list were:
 - [x] dynamically populating `<main>` with the result of those data sets, using appropriate styling
 - [x] improving the navigation bar to indicate where you were
 - [x] adding search (as there was an API call for searching ingredients)
-- [] use React Router
+- [ ] use React Router
 - [x] improve styles for mobile
-- [] make mobile menu autoclose on selection
-- [] handle searches that return no results
-- [] improve styling on category pages so the 'chalkboards' are sized based on content rather than on flexbox
+- [ ] make mobile menu autoclose on selection
+- [ ] handle searches that return no results
+- [ ] improve styling on category pages so the 'chalkboards' are sized based on content rather than on flexbox
 
 ### Functionality
 
