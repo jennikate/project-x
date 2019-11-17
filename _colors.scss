@@ -1,0 +1,20 @@
+
+$primary: #FF1D8E;
+$secondary: #48008f;
+$secondaryDark: #15002A;
+$inverse: #ffc8e3;
+$text: #333333;
+
+
+$neon-primary: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px;
+$neon-secondary: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #48008f 0px 0px 20px, #48008f 0px 0px 30px, #48008f 0px 0px 40px, #48008f 0px 0px 50px, #48008f 0px 0px 75px;
+$neon-special: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #ffc8e3 0px 0px 20px, #ffc8e3 0px 0px 30px, #ffc8e3 0px 0px 40px, #ffc8e3 0px 0px 50px, #ffc8e3 0px 0px 75px;
+
+
+/*starry pattern*/
+$star-pattern: radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+$star-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+$star-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
