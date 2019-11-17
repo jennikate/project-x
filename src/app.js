@@ -119,7 +119,7 @@ class App extends React.Component {
           .then(resp => this.setState({ glass: resp }))
       }; break
       case 'Drinks': {
-        fetch(`https://www.thecocktaildb.com/api/json/v1/1/${e.target.dataset.url}${(e.target.id).split(' ').join('_')}`)
+        fetch(`https://www.thecocktaildb.com/api/json/v1/1/${e.target.dataset.url}${(e.target.dataset.id).split(' ').join('_')}`)
           .then(resp => resp.json())
           .then(resp => this.setState({ drinksByCategory: resp }))
       }; break
@@ -179,16 +179,16 @@ class App extends React.Component {
     return (
       <div>
         <header className='hero is-medium'>
-          
+
           <Hero />
         </header>
 
         <Nav
-            setNavChoice={(e) => this.setNavChoice(e)}
-            updateInput={(e) => this.updateInput(e)}
-            runSearch={(e) => this.runSearch(e)}
-            mainView={this.state.mainView}
-          />
+          setNavChoice={(e) => this.setNavChoice(e)}
+          updateInput={(e) => this.updateInput(e)}
+          runSearch={(e) => this.runSearch(e)}
+          mainView={this.state.mainView}
+        />
         <main>
           <section className='section'>
             {this.switchMain(this.state.mainView)}
@@ -204,5 +204,4 @@ ReactDOM.render(
   <App />,
   document.getElementById('root')
 )
-
 

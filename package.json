@@ -33,6 +33,8 @@
     "bulma": "^0.8.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "react-router-dom": "^5.1.2"
+    "react-lazy-hero": "^2.0.0",
+    "react-router-dom": "^5.1.2",
+    "styled-components": "^4.4.1"
   }
 }

@@ -6,21 +6,38 @@ TO DO
 [x] style
 [x] add ingredient tab
 [x] add glass tab
+[x] h2s
+[x] better style on categorisation pages
+[x] subtitle saying what the site is
 
-
+[] reactrouter :: unable to work out how to use this with my structure
+[x] handle no results :: the common occurance for this was due to children of the onclick div not inheriting the datasets (see question below)
 [] handle search errors / nothing returned from JSON (should cover clicked or searched scenarios if I get it right)
 [] mobile nav
-[] h2s
-[] better style on categorisation pages
-[] subtitle saying what the site is
 
 
 
 
+QUESTIONS I HAVE
+
+> see Categories.js as example
+when setting onclick, can you specify the datasets once and then have all the children include them for the onclick call?
+beacuse of this I couldn't get it to consistently work correctly if you happen to click the fontawesome icon
+
+> React router 
+with the way I've set up the call API and show page on demand, how would you attach router to it
 
 
+COMMENTS
+
+> API calls 
+this API does not return a full list of all drinks, it requires you to call a subsset, hence the multiple calls on demand rather than front loading results
 
 
+> Libraries
+- styled-components for adding css styles in the js : added this when I was testing creating dynamic background-images based on data being called from the API, however I ultimately decided not to use background images
+- react router dom for better URLs
+- react lazy hero for nice hero image loading and effects (which also requires styled components!)
 
 
 

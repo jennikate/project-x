@@ -8,11 +8,11 @@ const Categories = ({ categories, setNavChoice }) => {
     <div className="columns  is-vcentered is-multiline">
       {categories.map((drink, i) => {
         return (
-          <div key={i} className="column is-one-quarter has-icons-left category" id={drink.strCategory} data-group='Drinks' data-url='filter.php?c=' onClick={setNavChoice}>
-            <span className="icon is-left">
+          <div key={i} className="column is-one-quarter has-icons-left category" data-id={drink.strCategory} data-group='Drinks' data-url='filter.php?c=' onClick={setNavChoice}>
+            <span className="icon is-left" data-id={drink.strCategory} data-group='Drinks' data-url='filter.php?c=' onClick={setNavChoice}>
               <FontAwesomeIcon icon="cocktail" />
             </span>
-            <a>{drink.strCategory}</a>
+            <a data-id={drink.strCategory} data-group='Drinks' data-url='filter.php?c=' onClick={setNavChoice}>{drink.strCategory}</a>
           </div>
         )
       })}
