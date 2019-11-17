@@ -7,7 +7,9 @@
 }
 
 .hero {
-
+  .hero-container {
+    background-image: url('/images/bg.jpg');
+  }
   p {
     color: $inverse;
     text-align: right;

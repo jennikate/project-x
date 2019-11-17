@@ -3,7 +3,7 @@ import LazyHero from 'react-lazy-hero'
 
 const Hero = () => {
   return (
-    <div>
+    <div className='hero-container'>
       <LazyHero imageSrc='images/bg.jpg' color='#15002A' isCentered={false} parallaxOffset={50}>
         <h1 className="title">Cocktails</h1>
         <div className="hero-text">
