@@ -69,7 +69,7 @@ class App extends React.Component {
   //handle mobile nav
   //on burger click, change between burger and x based on state of open or closed (open will also show menu by default)
   //on menu item click, change menu state to closed (this is done by unchecking nav-toggle-state, which should change burger state to closed as well)
-  handleMobileMenuClick(e) {
+  handleMobileMenuClick() {
     //if is currently false, set to true else vice versa
     this.setState({
       mobileMenuOpen: !this.state.mobileMenuOpen ? true : false

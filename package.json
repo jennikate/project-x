@@ -5,9 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "webpack-dev-server --mode=development"
+    "serve": "webpack-dev-server --mode=development",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build"
   },
-  "author": "",
+  "homepage": "https://jennikate.github.io/project-x",
+  "author": "JenniKate Wallace",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -31,10 +36,12 @@
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/react-fontawesome": "^0.1.7",
     "bulma": "^0.8.0",
+    "gh-pages": "^2.1.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-lazy-hero": "^2.0.0",
     "react-router-dom": "^5.1.2",
+    "react-scripts": "^3.2.0",
     "styled-components": "^4.4.1"
   }
 }
