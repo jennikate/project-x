@@ -16,6 +16,7 @@ TO DO
 [x] mobile
 [] close mobile nav when menu item clicked
 [] change burger to an x when mobile menu open
+[] change styling on category pages so chalkboards are variying sizes based on content rather than static (need the styling in a div within my flexed div I think )
 
 
 
