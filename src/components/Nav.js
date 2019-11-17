@@ -1,22 +1,20 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const Nav = ({ setNavChoice, mainView, updateInput, searchCocktails, mobileNav }) => {
+const Nav = ({ setNavChoice, mainView, updateInput, searchCocktails, handleMobileMenuClick }) => {
 
   return (
     <div>
       <nav className="navbar">
         <div className="container">
           <div className="navbar-brand">
-            <a className="navbar-item">
-            </a>
             <label className="navbar-burger burger" data-target="navbarMenuHeroA" role="button" htmlFor="nav-toggle-state">
               <span></span> {/* needs to be empty to display the burger */}
               <span></span>
               <span></span>
             </label>
           </div>
-          <input type="checkbox" id="nav-toggle-state" />
+          <input type="checkbox" id="nav-toggle-state" onChange={handleMobileMenuClick} />
           <div id="navbarMenuHeroA" className="navbar-menu">
             <div className='navbar-start'>
               <span className='navbar-item'>
@@ -51,7 +49,6 @@ const Nav = ({ setNavChoice, mainView, updateInput, searchCocktails, mobileNav }
           </div>
         </div>
       </nav>
-      {mobileNav}
     </div>
   )
 }

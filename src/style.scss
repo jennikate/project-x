@@ -55,12 +55,18 @@
   }
 }
 
+//mobile impacting classes
 #nav-toggle-state {
   display: none;
 }
-
 #nav-toggle-state:checked ~ .navbar-menu {
   display: block;
+}
+.navbar-menu {
+  background-color: $secondaryDark;
+}
+.navbar-burger {
+  cursor: pointer;
 }
 
 .input {
@@ -119,12 +125,14 @@ main {
     margin: 30px;
     animation: drift ease-in-out 1s infinite alternate;
     transform-origin: center -20px;
+    cursor: pointer;
   }
 
   /* Make the image fit the box */
   .img-photo img {
     width: 100%;
     border-style: inset;
+    cursor: pointer;
   }
   
   .img-photo::after, .category::after {
@@ -197,4 +205,26 @@ main {
 @keyframes drift {
   0% { transform: rotate(3deg); }
   100% { transform: rotate(-3deg); }
+}
+
+//Bulma is mobile first so really should go swap around the media queries
+@media only screen and (max-width: 600px) {
+  .title {
+    font-size: 5rem;
+  }
+  .hero {
+   p {
+     font-size: 1rem;
+   }
+  .hero-text {
+    padding-right: 1rem;
+    padding-top: 3rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .navbar-menu {
+    background-color: transparent;
+  }
 }

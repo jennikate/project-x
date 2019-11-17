@@ -13,7 +13,9 @@ TO DO
 [] reactrouter :: unable to work out how to use this with my structure
 [x] handle no results :: the common occurance for this was due to children of the onclick div not inheriting the datasets (see question below)
 [] handle search errors / nothing returned from JSON (should cover clicked or searched scenarios if I get it right)
-[] mobile nav
+[x] mobile
+[] close mobile nav when menu item clicked
+[] change burger to an x when mobile menu open
 
 
 

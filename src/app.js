@@ -35,38 +35,14 @@ class App extends React.Component {
       drinkType: '',
       drink: '',
       searchCocktails: '',
-      categories: {
-        drinks: []
-      },
-      ingredients: {
-        drinks: []
-      },
-      glass: {
-        drinks: []
-      },
-      drinksByCategory: {
-        drinks: [
-          {}
-        ]
-      },
-      drinkByName: {
-        drinks: [
-          {
-          }
-        ]
-      },
-      drinkByRandom: {
-        drinks: [
-          {
-          }
-        ]
-      },
-      searchResults: {
-        drinks: [
-          {
-          }
-        ]
-      }
+      categories: { drinks: [] },
+      ingredients: { drinks: [] },
+      glass: { drinks: [] },
+      drinksByCategory: { drinks: [ { } ] },
+      drinkByName: { drinks: [ { } ] },
+      drinkByRandom: { drinks: [ { } ] },
+      searchResults: {  drinks: [ { } ] },
+      mobileMenuOpen: false
     }
   }
 
@@ -91,14 +67,15 @@ class App extends React.Component {
   }
 
   //handle mobile nav
-  mobileNav() {
-    const burger = document.querySelector('.burger')
-    const nav = document.querySelector('#' + burger.dataset.target)
-    burger.addEventListener('click', function () {
-      burger.classList.toggle('is-active')
-      nav.classList.toggle('is-active')
+  //on burger click, change between burger and x based on state of open or closed (open will also show menu by default)
+  //on menu item click, change menu state to closed (this is done by unchecking nav-toggle-state, which should change burger state to closed as well)
+  handleMobileMenuClick(e) {
+    //if is currently false, set to true else vice versa
+    this.setState({
+      mobileMenuOpen: !this.state.mobileMenuOpen ? true : false
     })
   }
+
 
 
   //FETCH API DATA -- different fetch URLs based on what user clicks
@@ -197,6 +174,7 @@ class App extends React.Component {
           setNavChoice={(e) => this.setNavChoice(e)}
           updateInput={(e) => this.updateInput(e)}
           runSearch={(e) => this.runSearch(e)}
+          handleMobileMenuClick={(e) => this.handleMobileMenuClick(e)}
           mainView={this.state.mainView}
         />
         <main>
