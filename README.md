@@ -9,7 +9,7 @@ This was my second project with General Assembly's Software Engineering Immersiv
 
 [Check out the GitHub Repo here.](https://github.com/jennikate/project-x/tree/github-pages)
 
-![image of Cocktails logo]()
+![image of Cocktails logo](https://github.com/jennikate/project-x/blob/github-pages/src/images/for-readme/hero.png?raw=true)
 
 
 ## Brief
@@ -81,7 +81,7 @@ A second switch enabled me to swap the content of <main> out dynamically after t
 
 Below is the switch function for fetching the API data. I have ideas on reducing this down to a single fetch statement with the relevant states called, however did not have time to refactor the states/datastorage to cater to all scenarios.
 
-<img src="https://github.com/jennikate/project-x/blob/master/reademe-assets/screenshots/screenshot1.png" width=45%> 
+<img src="https://github.com/jennikate/project-x/blob/github-pages/src/images/for-readme/code-example-1.png?raw=true" width=45%> 
 #### Featured piece of code 2: Rendering the page
 
 Below is the main render statement that contains the page structure.
@@ -91,7 +91,7 @@ In the <main> section I use a named state to determine which component to load, 
 The Nav takes a few parameters to call functions, all of which are set to bind 'this' to the component for when the functions are run.
 In this app the Nav does the heavy lifting of calling all the needed functions and passing the params to them to call the right data and components.
 
-<img src="https://github.com/jennikate/project-1/blob/master/reademe-assets/screenshots/screenshot2.png" width=45%>
+<img src="https://github.com/jennikate/project-x/blob/github-pages/src/images/for-readme/code-example-2.png?raw=true" width=45%>
 
 
 
@@ -99,8 +99,8 @@ In this app the Nav does the heavy lifting of calling all the needed functions a
 
 ### Screenshots
 
-<img src="https://github.com/jennikate/project-1/blob/master/reademe-assets/screenshots/screenshot1.png" width=45%> <img src="https://github.com/jennikate/project-1/blob/master/reademe-assets/screenshots/screenshot2.png" width=45%>
-<img src="https://github.com/jennikate/project-1/blob/master/reademe-assets/screenshots/screenshot3.png" width=45%> <img src="https://github.com/jennikate/project-1/blob/master/reademe-assets/screenshots/screenshot4.png" width=45%>
+<img src="https://github.com/jennikate/project-x/blob/github-pages/src/images/for-readme/Screenshot-1.png?raw=true" width=45%> <img src="https://github.com/jennikate/project-x/blob/github-pages/src/images/for-readme/Screenshot-2.png?raw=true" width=45%>
+<img src="https://github.com/jennikate/project-x/blob/github-pages/src/images/for-readme/Screenshot-3.png?raw=true" width=45%> <img src="https://github.com/jennikate/project-x/blob/github-pages/src/images/for-readme/Screenshot-4.png?raw=true" width=45%>
 
 
 ### Bugs
