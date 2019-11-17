@@ -137,6 +137,6 @@ My open question for this is, with the way I've set up the call API and show pag
 **Using Lodash**
 I know this is a popular framework and it looks really interesting, I would like to try it out on my mapping initially.
 
-** Improving the onClick handling **
+**Improving the onClick handling**
 If you look at my current code you will find a lot of repetition of onClick and the associated data-*. I need to learn how to force child elements to have the same parameters as the parent when they're clicked on. I believe you can assign the details to the outer div, and then images and text within it will pass through the same parameters -- but I haven't worked out how yet!
 
