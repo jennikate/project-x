@@ -90,6 +90,16 @@ class App extends React.Component {
     })
   }
 
+  //handle mobile nav
+  mobileNav() {
+    const burger = document.querySelector('.burger')
+    const nav = document.querySelector('#' + burger.dataset.target)
+    burger.addEventListener('click', function () {
+      burger.classList.toggle('is-active')
+      nav.classList.toggle('is-active')
+    })
+  }
+
 
   //FETCH API DATA -- different fetch URLs based on what user clicks
   setNavChoice(e) {
@@ -141,32 +151,32 @@ class App extends React.Component {
   switchMain(param) {
     switch (param) {
       case 'Home': return <Home
-        drink={this.state.drinkByRandom.drinks[0]} />;
+        drink={this.state.drinkByRandom.drinks[0]} />
       case 'Category':
         return <Categories
           setNavChoice={(e) => this.setNavChoice(e)}
           categories={this.state.categories.drinks}
-        />;
+        />
       case 'Ingredients':
         return <Ingredients
           setNavChoice={(e) => this.setNavChoice(e)}
           ingredients={this.state.ingredients.drinks}
-        />;
+        />
       case 'Glass':
         return <Glass
           setNavChoice={(e) => this.setNavChoice(e)}
           glass={this.state.glass.drinks}
-        />;
+        />
       case 'Drinks':
         return <Drinks
           setNavChoice={(e) => this.setNavChoice(e)}
           drinks={this.state.drinksByCategory.drinks}
-        />;
+        />
       case 'Search':
         return <Drinks
           setNavChoice={(e) => this.setNavChoice(e)}
           drinks={this.state.searchResults.drinks}
-        />;
+        />
       case 'Drink':
         return <Drink
           drink={this.state.drinkByName.drinks[0]}
