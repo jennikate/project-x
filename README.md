@@ -112,6 +112,8 @@ Occasionally the API is slow to load and it looks like it's broken, but it's not
 
 If a search returns nothing you will often get a blank black box rather than nothing or an error message.
 
+LazyHero works in dev mode, but not when live & I've not worked out why yet.
+
 ### Wins and Blockers
 
 The two biggest wins for me were
