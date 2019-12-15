@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "webpack-dev-server --mode=development",
     "build": "webpack -p",
-    "deploy": "yarn build && gh-pages -d dist" 
+    "deploy": "yarn build && gh-pages -d dist"
   },
   "homepage": "https://jennikate.github.io/project-x",
   "author": "JenniKate Wallace",
@@ -39,6 +39,7 @@
     "react-dom": "^16.7.0",
     "react-lazy-hero": "^2.0.0",
     "react-router-dom": "^5.1.2",
+    "serialize-javascript": "^2.1.2",
     "styled-components": "^4.4.1"
   }
 }
